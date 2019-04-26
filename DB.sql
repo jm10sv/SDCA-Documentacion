@@ -1,0 +1,1566 @@
+--------------------------------------------------------
+-- Archivo creado  - viernes-abril-26-2019   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ASEGURADORA
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."ASEGURADORA" 
+   (	"COD_ASEGURADORA" NUMBER, 
+	"NOMBRE" VARCHAR2(20 BYTE), 
+	"CORREO" VARCHAR2(100 BYTE), 
+	"TELEFONO" VARCHAR2(20 BYTE), 
+	"EJECUTIVO_VENTA" VARCHAR2(100 BYTE), 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."ASEGURADORA"."COD_ASEGURADORA" IS 'codigo unico que identifica a cada aseguradora';
+   COMMENT ON COLUMN "JM10"."ASEGURADORA"."NOMBRE" IS 'nombre con el que se identifica a la aseguradora';
+   COMMENT ON COLUMN "JM10"."ASEGURADORA"."CORREO" IS 'correo electronico de contacto de la aseguradora';
+   COMMENT ON COLUMN "JM10"."ASEGURADORA"."TELEFONO" IS 'telefono de contacto de la aseguradora';
+   COMMENT ON COLUMN "JM10"."ASEGURADORA"."EJECUTIVO_VENTA" IS 'persona encargada de contacto respecto a cada aseguradora';
+   COMMENT ON COLUMN "JM10"."ASEGURADORA"."ESTADO" IS 'parametro que identifica si la aseguradora se encuentra activa o inactiva en la base de datos';
+   COMMENT ON COLUMN "JM10"."ASEGURADORA"."USUARIO_CREA" IS 'identidad de quien creo el registro';
+   COMMENT ON COLUMN "JM10"."ASEGURADORA"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."ASEGURADORA"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."ASEGURADORA"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table CLIENTE
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."CLIENTE" 
+   (	"DUI_CLIENTE" NUMBER, 
+	"NOMBRE_CLIENTE" VARCHAR2(20 BYTE), 
+	"TEL_MOVIL" VARCHAR2(20 BYTE), 
+	"TEL_OFICINA" VARCHAR2(20 BYTE), 
+	"TEL_CASA" VARCHAR2(20 BYTE), 
+	"CORREO" VARCHAR2(50 BYTE), 
+	"DIRECCION" VARCHAR2(100 BYTE), 
+	"COD_ASEGURADORA" NUMBER, 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."CLIENTE"."DUI_CLIENTE" IS 'documento unico de identidad el cual identifica a cada cliente';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."NOMBRE_CLIENTE" IS 'nombre que identifica al cliente';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."TEL_MOVIL" IS 'numero de contacto telefonico personal del cliente';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."TEL_OFICINA" IS 'numero de contacto telefonico del trabajo del cliente';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."TEL_CASA" IS 'numero de contacto telefonico de la residencia del cliente';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."CORREO" IS 'correo electronico de contacto del cliente';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."DIRECCION" IS 'direccion de residencia del cliente';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."COD_ASEGURADORA" IS 'codigo unico de aseguradora con la que cuenta el cliente';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."ESTADO" IS 'parametro que establece si el cliente se encuentra activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."CLIENTE"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table COMPETENCIAS
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."COMPETENCIAS" 
+   (	"COD_COMPETENCIA" NUMBER, 
+	"NOM_COMPETENCIA" VARCHAR2(20 BYTE), 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."COMPETENCIAS"."COD_COMPETENCIA" IS 'codigo unico con el que se identifica cada competencia';
+   COMMENT ON COLUMN "JM10"."COMPETENCIAS"."NOM_COMPETENCIA" IS 'nombre con el que se identifica la competencia';
+   COMMENT ON COLUMN "JM10"."COMPETENCIAS"."ESTADO" IS 'parametro que establece si la competencia se encuentra activa o inactiva en la base de datos';
+   COMMENT ON COLUMN "JM10"."COMPETENCIAS"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."COMPETENCIAS"."FECHA_CREA" IS 'fecha en que se creo el registro';
+   COMMENT ON COLUMN "JM10"."COMPETENCIAS"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."COMPETENCIAS"."FECHA_MOD" IS 'fecha en que se modifico el registro';
+--------------------------------------------------------
+--  DDL for Table DETALLE_DIAGNOSTICO
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."DETALLE_DIAGNOSTICO" 
+   (	"COD_DETDIAG" NUMBER, 
+	"COD_DIAGNOSTICO" NUMBER, 
+	"COD_PROVEEDOR" NUMBER, 
+	"COD_REPUESTO" NUMBER, 
+	"COD_SERVICIO" NUMBER, 
+	"DUI_EMPLEADO" NUMBER, 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."COD_DETDIAG" IS 'codigo unico que identifica a cada detalle de diagnostico';
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."COD_DIAGNOSTICO" IS 'codigo unico de cada detalle';
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."COD_PROVEEDOR" IS 'codigo unico que identifica a cada proveedor';
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."COD_REPUESTO" IS 'codigo unico que identifica a cada repuesto';
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."COD_SERVICIO" IS 'codigo unico que identifica a cada servicio';
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."DUI_EMPLEADO" IS 'documento unico de identidad de empleado que realizo el diagnostico';
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."ESTADO" IS 'parametro que establece si el detalle esta activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."DETALLE_DIAGNOSTICO"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table DETALLE_FACTURA
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."DETALLE_FACTURA" 
+   (	"COD_DETFAC" NUMBER, 
+	"COD_SERVICIO" NUMBER, 
+	"COD_PROVEEDOR" NUMBER, 
+	"COD_REPUESTO" NUMBER, 
+	"COD_DIAGNOSTICO" NUMBER, 
+	"COD_FACTURA" NUMBER, 
+	"MONTO" NUMBER, 
+	"CANTIDAD" NUMBER, 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."COD_DETFAC" IS 'codigo unico de cada detalle de factura';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."COD_SERVICIO" IS 'codigo unico que identifica a cada servicio';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."COD_PROVEEDOR" IS 'codigo unico que identifica a cada proveedor';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."COD_REPUESTO" IS 'codigo unico que identifica a cada repuesto';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."COD_DIAGNOSTICO" IS 'codigo unico que identifica a cada diagnostico';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."COD_FACTURA" IS 'codigo unico que identifica a la factura a la que se hace referencia';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."MONTO" IS 'costo monetario a pagar';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."CANTIDAD" IS 'cantidad de repuestos utilizados';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."ESTADO" IS 'parametro que establece si el detalle se encuentra activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."DETALLE_FACTURA"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table DIAGNOSTICO
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."DIAGNOSTICO" 
+   (	"COD_DIAGNOSTICO" NUMBER, 
+	"DUI_CLIENTE" NUMBER, 
+	"PLACA" NUMBER, 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."DIAGNOSTICO"."COD_DIAGNOSTICO" IS 'codigo unico que identifica a cada diagnostico';
+   COMMENT ON COLUMN "JM10"."DIAGNOSTICO"."DUI_CLIENTE" IS 'documento unico de identidad que identifica al cliente';
+   COMMENT ON COLUMN "JM10"."DIAGNOSTICO"."PLACA" IS 'numero unico que identifica a cada vehiculo';
+   COMMENT ON COLUMN "JM10"."DIAGNOSTICO"."ESTADO" IS 'parametro que establece si el diagnostico esta activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."DIAGNOSTICO"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."DIAGNOSTICO"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."DIAGNOSTICO"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."DIAGNOSTICO"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table EMPLEADO
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."EMPLEADO" 
+   (	"DUI_EMPLEADO" NUMBER, 
+	"NOMBRE_EMPLEADO" VARCHAR2(100 BYTE), 
+	"TELEFONO" VARCHAR2(20 BYTE), 
+	"DIRECCION" VARCHAR2(100 BYTE), 
+	"CARGO" VARCHAR2(20 BYTE), 
+	"COD_COMPETENCIA" NUMBER, 
+	"CORREO" VARCHAR2(50 BYTE), 
+	"USUARIO" VARCHAR2(20 BYTE), 
+	"CONTRASENIA" VARCHAR2(20 BYTE), 
+	"NIVEL" VARCHAR2(20 BYTE), 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."DUI_EMPLEADO" IS 'documento unico de identidad del empleado';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."NOMBRE_EMPLEADO" IS 'nombre que identifica al empleado';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."TELEFONO" IS 'numero de contacto telefonico del empleado';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."DIRECCION" IS 'ubicacion de residencia del empleado';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."CARGO" IS 'cargo del empleado en la empresa';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."COD_COMPETENCIA" IS 'codigo unico que identifica a la competencia del empleado';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."CORREO" IS 'correo electronico del empleado';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."USUARIO" IS 'usuario del empleado dentro del sistema';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."CONTRASENIA" IS 'clave del usuario del empleado para acceder al sistema';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."NIVEL" IS 'nivel del usuario del empleado dentro del sistema';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."ESTADO" IS 'parametro que establece si el empleado esta activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."EMPLEADO"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table FACTURA
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."FACTURA" 
+   (	"COD_FACTURA" NUMBER, 
+	"FECHA" DATE, 
+	"DUI_CLIENTE" NUMBER, 
+	"PLACA" NUMBER, 
+	"COD_ASEGURADORA" NUMBER, 
+	"TOTAL_FINAL" NUMBER, 
+	"DUI_EMPLEADO" NUMBER, 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION DEFERRED 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."FACTURA"."COD_FACTURA" IS 'codigo unico que identifica a cada factura';
+   COMMENT ON COLUMN "JM10"."FACTURA"."FECHA" IS 'fecha de creacion de factura';
+   COMMENT ON COLUMN "JM10"."FACTURA"."DUI_CLIENTE" IS 'documento unico de identidad del cliente';
+   COMMENT ON COLUMN "JM10"."FACTURA"."PLACA" IS 'numero unico que identifica a cada vehiculo';
+   COMMENT ON COLUMN "JM10"."FACTURA"."COD_ASEGURADORA" IS 'codigo unico de aseguradora del cliente';
+   COMMENT ON COLUMN "JM10"."FACTURA"."TOTAL_FINAL" IS 'monto total a pagar';
+   COMMENT ON COLUMN "JM10"."FACTURA"."DUI_EMPLEADO" IS 'documento unico de identidad del empleado que realizo la factura';
+   COMMENT ON COLUMN "JM10"."FACTURA"."ESTADO" IS 'parametro que establece si la factura esta activa o inactiva en la base de datos';
+   COMMENT ON COLUMN "JM10"."FACTURA"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."FACTURA"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."FACTURA"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."FACTURA"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table MARCA
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."MARCA" 
+   (	"COD_MARCA" NUMBER(*,0), 
+	"NOMBRE_MARCA" VARCHAR2(20 BYTE), 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."MARCA"."COD_MARCA" IS 'codigo unico que identifica a cada marca';
+   COMMENT ON COLUMN "JM10"."MARCA"."NOMBRE_MARCA" IS 'nombre que identifica a la marca';
+   COMMENT ON COLUMN "JM10"."MARCA"."ESTADO" IS 'parametro que identifica si esta activa o inactiva esa marca en la base de datos';
+   COMMENT ON COLUMN "JM10"."MARCA"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."MARCA"."FECHA_CREA" IS 'fecha en que se creo el registro';
+   COMMENT ON COLUMN "JM10"."MARCA"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."MARCA"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table MODELO
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."MODELO" 
+   (	"COD_MODELO" NUMBER(*,0), 
+	"COD_MARCA" NUMBER(*,0), 
+	"NOMBRE_MODELO" VARCHAR2(20 BYTE), 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."MODELO"."COD_MODELO" IS 'codigo unico que identifica al modelo';
+   COMMENT ON COLUMN "JM10"."MODELO"."COD_MARCA" IS 'codigo de la marca a la cual pertenece ese modelo';
+   COMMENT ON COLUMN "JM10"."MODELO"."NOMBRE_MODELO" IS 'nombre que identifica al modelo';
+   COMMENT ON COLUMN "JM10"."MODELO"."ESTADO" IS 'parametro que establece si el modelo esta activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."MODELO"."USUARIO_CREA" IS 'identidad del usuario que crea el registro';
+   COMMENT ON COLUMN "JM10"."MODELO"."FECHA_CREA" IS 'fecha en que se creo el registro';
+   COMMENT ON COLUMN "JM10"."MODELO"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."MODELO"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table PROVEEDOR
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."PROVEEDOR" 
+   (	"COD_PROVEEDOR" NUMBER, 
+	"NOMBRE_PROVEEDOR" VARCHAR2(20 BYTE), 
+	"TELEFONO" VARCHAR2(20 BYTE), 
+	"DIRECCION" VARCHAR2(100 BYTE), 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."PROVEEDOR"."COD_PROVEEDOR" IS 'codigo unico con el que se identifica a cada proveedor';
+   COMMENT ON COLUMN "JM10"."PROVEEDOR"."NOMBRE_PROVEEDOR" IS 'nombre que identifica al proveedor';
+   COMMENT ON COLUMN "JM10"."PROVEEDOR"."TELEFONO" IS 'numero telefonico de contacto del proveedor';
+   COMMENT ON COLUMN "JM10"."PROVEEDOR"."DIRECCION" IS 'direccion donde esta ubicado el proveedor';
+   COMMENT ON COLUMN "JM10"."PROVEEDOR"."ESTADO" IS 'parametro que establece si el proveedor esta activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."PROVEEDOR"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."PROVEEDOR"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."PROVEEDOR"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."PROVEEDOR"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table REPUESTO
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."REPUESTO" 
+   (	"COD_REPUESTO" NUMBER, 
+	"NOMBRE_REPUESTO" VARCHAR2(20 BYTE), 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."REPUESTO"."COD_REPUESTO" IS 'codigo unico que identifica a cada repuesto';
+   COMMENT ON COLUMN "JM10"."REPUESTO"."NOMBRE_REPUESTO" IS 'nombre que identifica al repuesto';
+   COMMENT ON COLUMN "JM10"."REPUESTO"."ESTADO" IS 'parametro que establece si el repuesto esta activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."REPUESTO"."USUARIO_CREA" IS 'identidad del usuario que ingreso el registro';
+   COMMENT ON COLUMN "JM10"."REPUESTO"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."REPUESTO"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."REPUESTO"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table REPUESTO_PROVEEDOR
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."REPUESTO_PROVEEDOR" 
+   (	"REPUESTO_PROVEEDOR" NUMBER, 
+	"COD_PROVEEDOR" NUMBER, 
+	"COD_REPUESTO" NUMBER, 
+	"PRECIO" NUMBER, 
+	"FECHA_INGRESO" DATE, 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."REPUESTO_PROVEEDOR"."REPUESTO_PROVEEDOR" IS 'codigo unico que identifica al registro';
+   COMMENT ON COLUMN "JM10"."REPUESTO_PROVEEDOR"."COD_PROVEEDOR" IS 'codigo unico que identifica a cada proveedor';
+   COMMENT ON COLUMN "JM10"."REPUESTO_PROVEEDOR"."COD_REPUESTO" IS 'codigo unico que identifica a cada repuesto';
+   COMMENT ON COLUMN "JM10"."REPUESTO_PROVEEDOR"."PRECIO" IS 'costo monetario de cada repuesto';
+   COMMENT ON COLUMN "JM10"."REPUESTO_PROVEEDOR"."FECHA_INGRESO" IS 'fecha de ingreso del repuesto a la empresa';
+   COMMENT ON COLUMN "JM10"."REPUESTO_PROVEEDOR"."ESTADO" IS 'parametro que establece si el registro esta activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."REPUESTO_PROVEEDOR"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."REPUESTO_PROVEEDOR"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."REPUESTO_PROVEEDOR"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."REPUESTO_PROVEEDOR"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table SERVICIO
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."SERVICIO" 
+   (	"COD_SERVICIO" NUMBER, 
+	"NOMBRE_SERVICIO" VARCHAR2(50 BYTE), 
+	"PRECIO_SERVICIO" NUMBER, 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."SERVICIO"."COD_SERVICIO" IS 'codigo unico que identifica al servicio establecido';
+   COMMENT ON COLUMN "JM10"."SERVICIO"."NOMBRE_SERVICIO" IS 'nombre que identifica a cada servicio';
+   COMMENT ON COLUMN "JM10"."SERVICIO"."PRECIO_SERVICIO" IS 'costo monetario que implica la realizacion del servicio seleccionado';
+   COMMENT ON COLUMN "JM10"."SERVICIO"."ESTADO" IS 'parametro que establece si el servicio esta activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."SERVICIO"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."SERVICIO"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."SERVICIO"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."SERVICIO"."FECHA_MOD" IS 'fecha de modificacion del registro';
+--------------------------------------------------------
+--  DDL for Table VEHICULO
+--------------------------------------------------------
+
+  CREATE TABLE "JM10"."VEHICULO" 
+   (	"PLACA" NUMBER, 
+	"DUI_CLIENTE" NUMBER, 
+	"COD_MARCA" NUMBER, 
+	"COLOR" VARCHAR2(20 BYTE), 
+	"COD_MODELO" NUMBER, 
+	"ANIO" NUMBER, 
+	"TIPO" VARCHAR2(50 BYTE), 
+	"COD_ASEGURADORA" NUMBER, 
+	"ESTADO" VARCHAR2(10 BYTE), 
+	"USUARIO_CREA" VARCHAR2(20 BYTE), 
+	"FECHA_CREA" TIMESTAMP (6), 
+	"USUARIO_MOD" VARCHAR2(20 BYTE), 
+	"FECHA_MOD" TIMESTAMP (6)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+
+   COMMENT ON COLUMN "JM10"."VEHICULO"."PLACA" IS 'numero unico que identifica al vehiculo';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."DUI_CLIENTE" IS 'documento unico de identidad del cliente';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."COD_MARCA" IS 'codigo de marca del vehiculo';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."COLOR" IS 'color del vehiculo';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."COD_MODELO" IS 'codigo de modelo del vehiculo';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."ANIO" IS 'anio del vehiculo';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."TIPO" IS 'clasificacion de tipo de vehiculo';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."COD_ASEGURADORA" IS 'codigo unico de aseguradora del vehiculo';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."ESTADO" IS 'parametro que establece si el vehiculo esta activo o inactivo en la base de datos';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."USUARIO_CREA" IS 'identidad del usuario que creo el registro';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."FECHA_CREA" IS 'fecha de creacion del registro';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."USUARIO_MOD" IS 'identidad del usuario que modifico el registro';
+   COMMENT ON COLUMN "JM10"."VEHICULO"."FECHA_MOD" IS 'fecha de modificacion del registro';
+REM INSERTING into JM10.ASEGURADORA
+SET DEFINE OFF;
+Insert into JM10.ASEGURADORA (COD_ASEGURADORA,NOMBRE,CORREO,TELEFONO,EJECUTIVO_VENTA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (1,'Asesuisa','info@asesuisa.com','2298-8888','Karina Reyes',null,'JM10',to_timestamp('17/03/19 08:04:14.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.ASEGURADORA (COD_ASEGURADORA,NOMBRE,CORREO,TELEFONO,EJECUTIVO_VENTA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (2,'Pasifico','info@pasifico.com','2283 0800','Carlos Rubio',null,'JM10',to_timestamp('17/03/19 08:05:49.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),'JM10',to_timestamp('17/03/19 08:06:11.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'));
+REM INSERTING into JM10.CLIENTE
+SET DEFINE OFF;
+Insert into JM10.CLIENTE (DUI_CLIENTE,NOMBRE_CLIENTE,TEL_MOVIL,TEL_OFICINA,TEL_CASA,CORREO,DIRECCION,COD_ASEGURADORA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (50706068,'Juan','76567898','24567645','23456543','juan@gmail.com','Santa Rosa de Lima',null,'1','JM10',to_timestamp('17/03/19 07:42:37.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),'JM10',to_timestamp('17/03/19 07:44:29.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'));
+Insert into JM10.CLIENTE (DUI_CLIENTE,NOMBRE_CLIENTE,TEL_MOVIL,TEL_OFICINA,TEL_CASA,CORREO,DIRECCION,COD_ASEGURADORA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (50678680,'Kenia Humanzor','76778954','26458978','24567823','kh@gmail.com','San Miguel',null,'1','JM10',to_timestamp('17/03/19 07:50:47.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.CLIENTE (DUI_CLIENTE,NOMBRE_CLIENTE,TEL_MOVIL,TEL_OFICINA,TEL_CASA,CORREO,DIRECCION,COD_ASEGURADORA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (50662658,'Jorge','74203945','26057520','26057530','jorgecontreras.jm@gmail.com','Santa Rosa de Lima',null,'1','jm10',to_timestamp('10/03/19 12:00:00.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),'JM10',to_timestamp('24/03/19 10:33:04.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'));
+REM INSERTING into JM10.COMPETENCIAS
+SET DEFINE OFF;
+Insert into JM10.COMPETENCIAS (COD_COMPETENCIA,NOM_COMPETENCIA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (1,'electrico','activo','JM10',to_timestamp('24/03/19 10:25:31.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.COMPETENCIAS (COD_COMPETENCIA,NOM_COMPETENCIA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (2,'mecanica','activo','JM10',to_timestamp('24/03/19 10:25:49.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+REM INSERTING into JM10.DETALLE_DIAGNOSTICO
+SET DEFINE OFF;
+Insert into JM10.DETALLE_DIAGNOSTICO (COD_DETDIAG,COD_DIAGNOSTICO,COD_PROVEEDOR,COD_REPUESTO,COD_SERVICIO,DUI_EMPLEADO,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (2,2,1,1,1,50662659,'activo','JM10',to_timestamp('24/03/19 08:08:51.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),'JM10',to_timestamp('24/03/19 08:36:55.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'));
+REM INSERTING into JM10.DETALLE_FACTURA
+SET DEFINE OFF;
+REM INSERTING into JM10.DIAGNOSTICO
+SET DEFINE OFF;
+Insert into JM10.DIAGNOSTICO (COD_DIAGNOSTICO,DUI_CLIENTE,PLACA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (1,50662658,50301,'activo','JM10',to_timestamp('24/03/19 10:53:40.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.DIAGNOSTICO (COD_DIAGNOSTICO,DUI_CLIENTE,PLACA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (2,50706068,50302,'activo','JM10',to_timestamp('24/03/19 07:52:29.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+REM INSERTING into JM10.EMPLEADO
+SET DEFINE OFF;
+Insert into JM10.EMPLEADO (DUI_EMPLEADO,NOMBRE_EMPLEADO,TELEFONO,DIRECCION,CARGO,COD_COMPETENCIA,CORREO,USUARIO,CONTRASENIA,NIVEL,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (50662659,'Juan','77208967','San miguel','mecanica general',2,'juan@gmail.com','juan','1234','8','activo','JM10',to_timestamp('24/03/19 11:15:33.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+REM INSERTING into JM10.FACTURA
+SET DEFINE OFF;
+REM INSERTING into JM10.MARCA
+SET DEFINE OFF;
+Insert into JM10.MARCA (COD_MARCA,NOMBRE_MARCA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (7,'mitsubichi','activo','JM10',to_timestamp('29/03/19 09:09:58.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.MARCA (COD_MARCA,NOMBRE_MARCA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (8,'mazda','activo','JM10',to_timestamp('29/03/19 09:10:19.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.MARCA (COD_MARCA,NOMBRE_MARCA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (9,'HONDAS3','ACTIVO','UGB',to_timestamp('31/03/19 08:40:42.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.MARCA (COD_MARCA,NOMBRE_MARCA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (3,'toyota','activo','JM10',to_timestamp('17/03/19 08:17:17.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),'JM10',to_timestamp('24/03/19 08:10:41.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'));
+Insert into JM10.MARCA (COD_MARCA,NOMBRE_MARCA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (4,'chevrolet','activo','JM10',to_timestamp('22/03/19 09:36:12.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.MARCA (COD_MARCA,NOMBRE_MARCA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (6,'ford','activo','JM10',to_timestamp('24/03/19 08:06:18.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),'JM10',to_timestamp('24/03/19 08:10:09.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'));
+Insert into JM10.MARCA (COD_MARCA,NOMBRE_MARCA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (1,'honda','activo','JM10',to_timestamp('24/03/19 08:09:06.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.MARCA (COD_MARCA,NOMBRE_MARCA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (5,'bmw','activo','JM10',to_timestamp('24/03/19 08:38:08.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+REM INSERTING into JM10.MODELO
+SET DEFINE OFF;
+Insert into JM10.MODELO (COD_MODELO,COD_MARCA,NOMBRE_MODELO,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (1,1,'corolla','activo','JM10',to_timestamp('24/03/19 10:38:52.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+REM INSERTING into JM10.PROVEEDOR
+SET DEFINE OFF;
+Insert into JM10.PROVEEDOR (COD_PROVEEDOR,NOMBRE_PROVEEDOR,TELEFONO,DIRECCION,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (2,'super repuestos','60200003','San miguel','activo','JM10',to_timestamp('24/03/19 07:48:33.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.PROVEEDOR (COD_PROVEEDOR,NOMBRE_PROVEEDOR,TELEFONO,DIRECCION,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (1,'repuestos didea ','26209900','San Miguel','activo','JM10',to_timestamp('24/03/19 11:07:45.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+REM INSERTING into JM10.REPUESTO
+SET DEFINE OFF;
+Insert into JM10.REPUESTO (COD_REPUESTO,NOMBRE_REPUESTO,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (1,'filtro aceite  ','activo','JM10',to_timestamp('24/03/19 10:59:38.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+REM INSERTING into JM10.REPUESTO_PROVEEDOR
+SET DEFINE OFF;
+Insert into JM10.REPUESTO_PROVEEDOR (REPUESTO_PROVEEDOR,COD_PROVEEDOR,COD_REPUESTO,PRECIO,FECHA_INGRESO,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (1,1,1,15,to_date('24/03/19','DD/MM/RR'),'activo','JM10',to_timestamp('24/03/19 11:33:23.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),'JM10',to_timestamp('24/03/19 11:34:13.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'));
+Insert into JM10.REPUESTO_PROVEEDOR (REPUESTO_PROVEEDOR,COD_PROVEEDOR,COD_REPUESTO,PRECIO,FECHA_INGRESO,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (2,2,1,20,to_date('25/03/19','DD/MM/RR'),'activo','JM10',to_timestamp('24/03/19 08:10:43.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+REM INSERTING into JM10.SERVICIO
+SET DEFINE OFF;
+Insert into JM10.SERVICIO (COD_SERVICIO,NOMBRE_SERVICIO,PRECIO_SERVICIO,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (1,'cambio de aceite motor',10,'activo','JM10',to_timestamp('24/03/19 10:50:43.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+REM INSERTING into JM10.VEHICULO
+SET DEFINE OFF;
+Insert into JM10.VEHICULO (PLACA,DUI_CLIENTE,COD_MARCA,COLOR,COD_MODELO,ANIO,TIPO,COD_ASEGURADORA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (50301,50706068,1,'Blanco',1,2013,'sedan',null,'activo','JM10',to_timestamp('24/03/19 10:39:01.000000000 AM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+Insert into JM10.VEHICULO (PLACA,DUI_CLIENTE,COD_MARCA,COLOR,COD_MODELO,ANIO,TIPO,COD_ASEGURADORA,ESTADO,USUARIO_CREA,FECHA_CREA,USUARIO_MOD,FECHA_MOD) values (50302,50706068,1,'negro',1,2010,'sedan',null,'activo','JM10',to_timestamp('24/03/19 07:51:39.000000000 PM','DD/MM/RR HH12:MI:SSXFF AM'),null,null);
+--------------------------------------------------------
+--  DDL for Index ASEGURADORA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."ASEGURADORA_PK" ON "JM10"."ASEGURADORA" ("COD_ASEGURADORA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index CLIENTE_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."CLIENTE_PK" ON "JM10"."CLIENTE" ("DUI_CLIENTE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index COMPETENCIAS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."COMPETENCIAS_PK" ON "JM10"."COMPETENCIAS" ("COD_COMPETENCIA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index DETALLE_DIAGNOSTICO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."DETALLE_DIAGNOSTICO_PK" ON "JM10"."DETALLE_DIAGNOSTICO" ("COD_DETDIAG") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index DETALLE_FACTURA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."DETALLE_FACTURA_PK" ON "JM10"."DETALLE_FACTURA" ("COD_DETFAC") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index DIAGNOSTICO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."DIAGNOSTICO_PK" ON "JM10"."DIAGNOSTICO" ("COD_DIAGNOSTICO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index EMPLEADO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."EMPLEADO_PK" ON "JM10"."EMPLEADO" ("DUI_EMPLEADO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index FACTURA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."FACTURA_PK" ON "JM10"."FACTURA" ("COD_FACTURA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index MARCA_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."MARCA_PK" ON "JM10"."MARCA" ("COD_MARCA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index MODELO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."MODELO_PK" ON "JM10"."MODELO" ("COD_MODELO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index PROVEEDOR_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."PROVEEDOR_PK" ON "JM10"."PROVEEDOR" ("COD_PROVEEDOR") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index REPUESTO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."REPUESTO_PK" ON "JM10"."REPUESTO" ("COD_REPUESTO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index REPUESTO_PROVEEDOR_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."REPUESTO_PROVEEDOR_PK" ON "JM10"."REPUESTO_PROVEEDOR" ("REPUESTO_PROVEEDOR") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index SERVICIO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."SERVICIO_PK" ON "JM10"."SERVICIO" ("COD_SERVICIO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Index VEHICULO_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "JM10"."VEHICULO_PK" ON "JM10"."VEHICULO" ("PLACA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER" ;
+--------------------------------------------------------
+--  DDL for Trigger TG_ASEGURADORA
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_ASEGURADORA" BEFORE insert or update on ASEGURADORA for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_ASEGURADORA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_CLIENTE
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_CLIENTE" BEFORE insert or update on CLIENTE for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_CLIENTE" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_COMPETENCIAS
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_COMPETENCIAS" BEFORE insert or update on COMPETENCIAS for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_COMPETENCIAS" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_DETALLE_DIAGNOSTICO
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_DETALLE_DIAGNOSTICO" BEFORE insert or update on detalle_diagnostico  for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_DETALLE_DIAGNOSTICO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_DETALLE_FACTURA
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_DETALLE_FACTURA" BEFORE insert or update on DETALLE_FACTURA for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_DETALLE_FACTURA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_DIAGNOSTICO
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_DIAGNOSTICO" BEFORE insert or update on diagnostico for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_DIAGNOSTICO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_EMPLEADO
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_EMPLEADO" BEFORE insert or update on empleado  for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_EMPLEADO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_MARCA
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_MARCA" BEFORE insert or update on MARCA for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_MARCA" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_MODELO
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_MODELO" BEFORE insert or update on MODELO for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_MODELO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_PROVEEDOR
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_PROVEEDOR" BEFORE insert or update on proveedor  for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_PROVEEDOR" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_REPUESTO
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_REPUESTO" BEFORE insert or update on repuesto  for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_REPUESTO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_REPUESTO_PROVEEDOR
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_REPUESTO_PROVEEDOR" BEFORE insert or update on repuesto_proveedor  for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_REPUESTO_PROVEEDOR" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_SERVICIO
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_SERVICIO" BEFORE insert or update on servicio for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_SERVICIO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TG_VEHICULO
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TRIGGER "JM10"."TG_VEHICULO" BEFORE insert or update on VEHICULO for each row  
+Begin 
+If inserting then 
+ :new.USUARIO_CREA := user;
+  :new.FECHA_CREA := sysdate;
+
+Elsif updating then
+  :new.USUARIO_MOD := user;
+  :new.FECHA_MOD := sysdate;
+end if;
+end;
+/
+ALTER TRIGGER "JM10"."TG_VEHICULO" ENABLE;
+--------------------------------------------------------
+--  DDL for Procedure ACTUALIZAR_DETALLE_DIAGNOSTICO
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "JM10"."ACTUALIZAR_DETALLE_DIAGNOSTICO" (cod_detalle_d in number, est in varchar2)
+is
+v_detalle number;
+BEGIN
+  select count(*) into v_detalle from detalle_diagnostico where cod_detdiag = cod_detalle_d;
+  if(v_detalle > 0)then
+    UPDATE DETALLE_DIAGNOSTICO SET ESTADO = est where COD_DETDIAG = cod_detalle_d;
+    DBMS_OUTPUT.put_line('Datos actualizados correctamente');
+    COMMIT;
+  else
+    DBMS_OUTPUT.put_line('El detalle diagnostico que desea actualizar no existe');
+    END IF;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure ACTUALIZARMARCA
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "JM10"."ACTUALIZARMARCA" (codigo in number, nom in varchar2, est in varchar2)
+is
+v_marcaid number;
+BEGIN
+  select count(*) into v_marcaid from marca where COD_MARCA = codigo;
+    if(v_marcaid > 0)then
+      UPDATE MARCA SET NOMBRE_MARCA= nvl(nom,NOMBRE_MARCA), ESTADO=est WHERE COD_MARCA = codigo;
+      DBMS_OUTPUT.PUT_LINE('Registro actualizado con exito');
+    else
+      DBMS_OUTPUT.PUT_LINE('La marca que desea actualizar no existe');
+    end if;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure ELIMINARDETALLEDIAGNOSTICO
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "JM10"."ELIMINARDETALLEDIAGNOSTICO" (id number)
+AS
+    v_exist number;
+BEGIN
+    select count(*) into v_exist from detalle_diagnostico where cod_detdiag=id; 
+        if  v_exist !=0 then
+          delete from detalle_diagnostico where cod_detdiag=id;
+     --salida resultante del procedimiento si existen registros     
+          DBMS_OUTPUT.PUT_LINE('REGISTRO ELIMINADO');
+ --salida resultante del procedimiento si no existen registros        
+        else
+          DBMS_OUTPUT.PUT_LINE('EL REGISTRO NO SE PUEDE ELIMINAR DEBIDO A QUE NO EXISTE');
+        end if;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure ELIMINARMARCA
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "JM10"."ELIMINARMARCA" (codigo in number)
+is
+v_marcaid number;
+BEGIN
+  select count(*) into v_marcaid from marca where COD_MARCA = codigo;
+    if(v_marcaid > 0)then
+      delete from marca where COD_MARCA=codigo;
+      DBMS_OUTPUT.PUT_LINE('Registro eliminado con exito');
+    else
+      DBMS_OUTPUT.PUT_LINE('La marca que desea eliminar no existe');
+    end if;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure ELIMINARMARCA_NOMBRE
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "JM10"."ELIMINARMARCA_NOMBRE" (nomb in varchar2)
+is
+v_nombre MARCA.NOMBRE_MARCA%TYPE;
+BEGIN
+  select count(*) into v_nombre from marca where NOMBRE_MARCA =nomb;
+    if(v_nombre > 0)then
+      delete from marca where NOMBRE_MARCA =nomb;
+      DBMS_OUTPUT.PUT_LINE('Registro eliminado con exito');
+    else
+      DBMS_OUTPUT.PUT_LINE('La marca que desea eliminar no existe');
+    end if;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure INGRESAR_DETALLE_DIAGNOSTICO
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "JM10"."INGRESAR_DETALLE_DIAGNOSTICO" (cod_detalle_d in number, cod_d in number, cod_p in number, 
+cod_r in number, cod_s in number, cod_e in number, est in varchar2)
+is
+v_diagnostico number;
+v_proveedor number;
+v_repuesto number;
+v_servicio number;
+v_detalle number;
+v_empleado number;
+BEGIN
+  select count(*) into v_diagnostico from DIAGNOSTICO where cod_diagnostico = cod_d;
+  select count(*) into v_proveedor from PROVEEDOR where cod_proveedor = cod_p;
+  select count(*) into v_repuesto from REPUESTO where COD_REPUESTO = cod_r;
+  select count(*) into v_servicio from SERVICIO where COD_SERVICIO = cod_s;
+  select count(*) into v_empleado from empleado where DUI_EMPLEADO = cod_e;
+  select count(*) into v_detalle from detalle_diagnostico where cod_detdiag = cod_detalle_d;
+  if(v_diagnostico=0)then
+    DBMS_OUTPUT.PUT_LINE('El diagnostico ingresado no existe'); 
+  elsif (v_proveedor=0)then
+    DBMS_OUTPUT.PUT_LINE('El proveedor ingresado no existe');
+  elsif(v_repuesto=0)then
+    DBMS_OUTPUT.PUT_LINE('El repuesto ingresado no existe');    
+  elsif (v_servicio=0)then
+    DBMS_OUTPUT.PUT_LINE('El servicio ingresado no existe');
+  elsif (v_empleado=0)then
+    DBMS_OUTPUT.PUT_LINE('El empleado no existe'); 
+  elsif(v_detalle > 0)then
+    DBMS_OUTPUT.PUT_LINE('El detalle de diagnostico ya existe');
+  else
+    insert into detalle_diagnostico(COD_DETDIAG, cod_diagnostico, cod_proveedor, cod_repuesto, cod_servicio, DUI_EMPLEADO, estado) values(cod_detalle_d, cod_d,
+    cod_p, cod_r, cod_s, cod_e, est);
+    DBMS_OUTPUT.put_line('Detalle Diagnostico ingresado correctamente');
+    COMMIT;
+    END IF;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure INGRESARMARCA
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "JM10"."INGRESARMARCA" (codigo in number, nom in varchar2, est in varchar2)
+is
+v_marcaid number;
+v_nombre MARCA.NOMBRE_MARCA%TYPE;
+BEGIN
+  select count(*) into v_marcaid from marca where COD_MARCA = codigo;
+  select count(*) into v_nombre from marca where NOMBRE_MARCA = nom;
+  
+    if(v_marcaid > 0)then
+      DBMS_OUTPUT.PUT_LINE('El id de la marca que desea ingresar ya existe');
+    elsif(v_nombre > 0)then
+       DBMS_OUTPUT.PUT_LINE('El nombre de la marca ya existe');
+    else
+      insert into marca (cod_marca, nombre_marca, estado) values (codigo, nom, est);  
+      DBMS_OUTPUT.PUT_LINE('Marca registrada con exito');
+    end if;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure VERASEGURADORA
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "JM10"."VERASEGURADORA" (nomb varchar2)
+AS
+    v_id aseguradora.cod_aseguradora %TYPE;
+    v_nombre aseguradora.nombre%TYPE;
+    v_correo aseguradora.correo%TYPE;
+    v_telefono aseguradora.telefono%TYPE;
+    v_ejecutivo aseguradora.ejecutivo_venta%TYPE;
+    v_estado aseguradora.estado%TYPE;
+    v_usercrea aseguradora.usuario_crea%TYPE;
+    v_fechacrea aseguradora.fecha_crea%TYPE;
+    v_usermod aseguradora.usuario_mod%TYPE;
+    v_fechamod aseguradora.fecha_mod%TYPE;
+    v_exist number;
+BEGIN
+--consulta para saber si existren registros con el parámetro enviado en la tabla.
+    select count(*) into v_exist from aseguradora where nombre=nomb;
+    
+        if v_exist != 0 then
+            select cod_aseguradora,nombre,correo,telefono,ejecutivo_venta ,estado,usuario_crea,fecha_crea,usuario_mod,fecha_mod
+            into v_id,v_nombre,v_correo,v_telefono,v_ejecutivo,v_estado,v_usercrea,v_fechacrea,v_usermod,v_fechamod
+            from aseguradora
+            where nombre=nomb;
+     --salida resultante del procedimiento si existen registros     
+            DBMS_OUTPUT.PUT_LINE('CODIGO: '|| v_id ||chr(10)
+                           ||'NOMBRE: '|| v_nombre ||chr(10)
+                           ||'CORREO: '|| v_correo ||chr(10)
+||'TELEFONO: '|| v_telefono ||chr(10)
+||'EJECUTIVO DE VENTA: '|| v_ejecutivo ||chr(10)
+                           ||'ESTADO: '|| v_estado ||chr(10)
+                           ||'CREADOR: '|| v_usercrea ||chr(10)
+                           ||'FECHA CREACION: '|| v_fechacrea ||chr(10)
+                           ||'MODIFICO: '|| v_usermod ||chr(10)
+                           ||'FECHA MODIFICO: '|| v_fechamod ||chr(10)
+                           );
+        else
+     --salida resultante del procedimiento si no existen registros     
+            DBMS_OUTPUT.PUT_LINE('NO EXISTEN REGISTROS CON ESE NOMBRE');
+        end if;       
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure VERDETALLEDIAGNOSTICO
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "JM10"."VERDETALLEDIAGNOSTICO" (id number)
+AS
+    v_id detalle_diagnostico.cod_detdiag%type;
+    v_diagnostico detalle_diagnostico.cod_diagnostico%TYPE;
+    v_proveedor proveedor.nombre_proveedor%TYPE;
+    v_repuesto repuesto.nombre_repuesto%TYPE;
+    v_servicio servicio.nombre_servicio%TYPE;
+    v_empleado empleado.nombre_empleado%TYPE;
+    v_estado detalle_diagnostico.estado%TYPE;
+    v_usercrea detalle_diagnostico.usuario_crea%TYPE;
+    v_fechacrea detalle_diagnostico.fecha_crea%TYPE;
+    v_usermod detalle_diagnostico.usuario_mod%TYPE;
+    v_fechamod detalle_diagnostico.fecha_mod%TYPE;
+    v_exist number;
+BEGIN
+--consulta para saber si existren registros con el parámetro enviado en la tabla.
+    select count(*) into v_exist from DETALLE_DIAGNOSTICO where COD_DIAGNOSTICO=id;
+    
+        if v_exist != 0 then
+            select a.cod_detdiag,a.cod_diagnostico,p.nombre_proveedor,r.nombre_repuesto,c.nombre_servicio,e.nombre_empleado,a.estado,a.usuario_crea,a.fecha_crea,a.usuario_mod,a.fecha_mod
+            into v_id,v_diagnostico,v_proveedor,v_repuesto,v_servicio,v_empleado,v_estado,v_usercrea,v_fechacrea,v_usermod,v_fechamod
+            from DETALLE_DIAGNOSTICO a, PROVEEDOR p, REPUESTO r, SERVICIO c, EMPLEADO e
+            where a.cod_proveedor=p.COD_PROVEEDOR and a.cod_repuesto=r.cod_repuesto and a.cod_servicio=c.cod_servicio  and a.DUI_empleado=e.DUI_empleado and a.COD_DIAGNOSTICO =id;
+     --salida resultante del procedimiento si existen registros     
+            DBMS_OUTPUT.PUT_LINE('CODIGO DETALLE: '|| v_id ||chr(10)
+                           ||'CODIGO DIAGNOSTICO: '|| v_diagnostico ||chr(10)
+                            ||'PROVEEDOR: '|| v_proveedor ||chr(10)
+                            ||'REPUESTO: '|| v_repuesto ||chr(10)
+                            ||'SERVICIO: '|| v_servicio||chr(10)
+                            ||'EMPLEADO: '|| v_empleado||chr(10)
+                           ||'ESTADO: '|| v_estado ||chr(10)
+                           ||'CREADOR: '|| v_usercrea ||chr(10)
+                           ||'FECHA CREACION: '|| v_fechacrea ||chr(10)
+                           ||'MODIFICO: '|| v_usermod ||chr(10)
+                           ||'FECHA MODIFICO: '|| v_fechamod ||chr(10)
+                           );
+        else
+     --salida resultante del procedimiento si no existen registros     
+            DBMS_OUTPUT.PUT_LINE('NO EXISTEN REGISTROS CON ESE CODIGO');
+        end if;       
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure VERMARCA
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE NONEDITIONABLE PROCEDURE "JM10"."VERMARCA" (nombre in varchar2)
+is
+    v_id marca.cod_marca%TYPE;
+    v_nombre marca.nombre_marca%TYPE;
+    v_estado marca.estado%TYPE;
+    v_usercrea marca.usuario_crea%TYPE;
+    v_fechacrea marca.fecha_crea%TYPE;
+    v_usermod marca.usuario_mod%TYPE;
+    v_fechamod marca.fecha_mod%TYPE;
+    v_exist number;
+BEGIN
+--consulta para saber si existren registros con el parámetro enviado en la tabla.
+    select count(*) into v_exist from marca where nombre_marca=nombre;
+    
+        if v_exist != 0 then
+            select cod_marca,nombre_marca,estado,usuario_crea,fecha_crea,usuario_mod,fecha_mod
+            into v_id,v_nombre,v_estado,v_usercrea,v_fechacrea,v_usermod,v_fechamod
+            from marca
+            where nombre_marca=nombre;
+     --salida resultante del procedimiento si existen registros     
+            DBMS_OUTPUT.PUT_LINE('CODIGO: '|| v_id ||chr(10)
+                           ||'NOMBRE: '|| v_nombre ||chr(10)
+                           ||'ESTADO: '|| v_estado ||chr(10)
+                           ||'CREADOR: '|| v_usercrea ||chr(10)
+                           ||'FECHA CREACION: '|| v_fechacrea ||chr(10)
+                           ||'MODIFICO: '|| v_usermod ||chr(10)
+                           ||'FECHA MODIFICO: '|| v_fechamod ||chr(10)
+                           );
+        else
+     --salida resultante del procedimiento si no existen registros     
+            DBMS_OUTPUT.PUT_LINE('NO EXISTEN REGISTROS CON ESE NOMBRE');
+        end if;       
+END;
+
+/
+--------------------------------------------------------
+--  Constraints for Table CLIENTE
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."CLIENTE" MODIFY ("DUI_CLIENTE" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."CLIENTE" MODIFY ("NOMBRE_CLIENTE" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."CLIENTE" MODIFY ("TEL_MOVIL" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."CLIENTE" MODIFY ("CORREO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."CLIENTE" MODIFY ("DIRECCION" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."CLIENTE" ADD CONSTRAINT "CLIENTE_PK" PRIMARY KEY ("DUI_CLIENTE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DETALLE_DIAGNOSTICO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" MODIFY ("COD_DETDIAG" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" MODIFY ("COD_DIAGNOSTICO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" MODIFY ("COD_PROVEEDOR" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" MODIFY ("COD_SERVICIO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" MODIFY ("DUI_EMPLEADO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" ADD CONSTRAINT "DETALLE_DIAGNOSTICO_PK" PRIMARY KEY ("COD_DETDIAG")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" MODIFY ("COD_REPUESTO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table EMPLEADO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("DUI_EMPLEADO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("NOMBRE_EMPLEADO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("TELEFONO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("DIRECCION" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("CARGO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("COD_COMPETENCIA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("CORREO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("USUARIO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("CONTRASENIA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("NIVEL" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."EMPLEADO" ADD CONSTRAINT "EMPLEADO_PK" PRIMARY KEY ("DUI_EMPLEADO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DIAGNOSTICO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."DIAGNOSTICO" MODIFY ("COD_DIAGNOSTICO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DIAGNOSTICO" MODIFY ("DUI_CLIENTE" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DIAGNOSTICO" MODIFY ("PLACA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DIAGNOSTICO" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DIAGNOSTICO" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DIAGNOSTICO" ADD CONSTRAINT "DIAGNOSTICO_PK" PRIMARY KEY ("COD_DIAGNOSTICO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table COMPETENCIAS
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."COMPETENCIAS" MODIFY ("COD_COMPETENCIA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."COMPETENCIAS" MODIFY ("NOM_COMPETENCIA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."COMPETENCIAS" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."COMPETENCIAS" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."COMPETENCIAS" ADD CONSTRAINT "COMPETENCIAS_PK" PRIMARY KEY ("COD_COMPETENCIA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MARCA
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."MARCA" MODIFY ("COD_MARCA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."MARCA" MODIFY ("NOMBRE_MARCA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."MARCA" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."MARCA" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."MARCA" ADD CONSTRAINT "MARCA_PK" PRIMARY KEY ("COD_MARCA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table REPUESTO_PROVEEDOR
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."REPUESTO_PROVEEDOR" MODIFY ("REPUESTO_PROVEEDOR" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO_PROVEEDOR" MODIFY ("COD_PROVEEDOR" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO_PROVEEDOR" MODIFY ("COD_REPUESTO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO_PROVEEDOR" MODIFY ("PRECIO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO_PROVEEDOR" MODIFY ("FECHA_INGRESO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO_PROVEEDOR" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO_PROVEEDOR" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO_PROVEEDOR" ADD CONSTRAINT "REPUESTO_PROVEEDOR_PK" PRIMARY KEY ("REPUESTO_PROVEEDOR")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ASEGURADORA
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."ASEGURADORA" MODIFY ("COD_ASEGURADORA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."ASEGURADORA" MODIFY ("NOMBRE" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."ASEGURADORA" MODIFY ("CORREO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."ASEGURADORA" MODIFY ("TELEFONO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."ASEGURADORA" MODIFY ("EJECUTIVO_VENTA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."ASEGURADORA" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."ASEGURADORA" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."ASEGURADORA" ADD CONSTRAINT "ASEGURADORA_PK" PRIMARY KEY ("COD_ASEGURADORA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PROVEEDOR
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."PROVEEDOR" MODIFY ("COD_PROVEEDOR" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."PROVEEDOR" MODIFY ("NOMBRE_PROVEEDOR" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."PROVEEDOR" MODIFY ("TELEFONO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."PROVEEDOR" MODIFY ("DIRECCION" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."PROVEEDOR" MODIFY ("ESTADO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."PROVEEDOR" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."PROVEEDOR" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."PROVEEDOR" ADD CONSTRAINT "PROVEEDOR_PK" PRIMARY KEY ("COD_PROVEEDOR")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table REPUESTO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."REPUESTO" MODIFY ("COD_REPUESTO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO" MODIFY ("NOMBRE_REPUESTO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO" MODIFY ("ESTADO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."REPUESTO" ADD CONSTRAINT "REPUESTO_PK" PRIMARY KEY ("COD_REPUESTO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table VEHICULO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."VEHICULO" MODIFY ("PLACA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."VEHICULO" MODIFY ("DUI_CLIENTE" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."VEHICULO" MODIFY ("COD_MARCA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."VEHICULO" MODIFY ("COLOR" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."VEHICULO" MODIFY ("COD_MODELO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."VEHICULO" MODIFY ("ANIO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."VEHICULO" MODIFY ("TIPO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."VEHICULO" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."VEHICULO" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."VEHICULO" ADD CONSTRAINT "VEHICULO_PK" PRIMARY KEY ("PLACA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SERVICIO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."SERVICIO" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."SERVICIO" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."SERVICIO" MODIFY ("COD_SERVICIO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."SERVICIO" MODIFY ("NOMBRE_SERVICIO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."SERVICIO" MODIFY ("PRECIO_SERVICIO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."SERVICIO" MODIFY ("ESTADO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."SERVICIO" ADD CONSTRAINT "SERVICIO_PK" PRIMARY KEY ("COD_SERVICIO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table DETALLE_FACTURA
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."DETALLE_FACTURA" MODIFY ("COD_DETFAC" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_FACTURA" MODIFY ("COD_SERVICIO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_FACTURA" MODIFY ("COD_PROVEEDOR" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_FACTURA" MODIFY ("COD_FACTURA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_FACTURA" MODIFY ("MONTO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_FACTURA" MODIFY ("CANTIDAD" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_FACTURA" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_FACTURA" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."DETALLE_FACTURA" ADD CONSTRAINT "DETALLE_FACTURA_PK" PRIMARY KEY ("COD_DETFAC")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table FACTURA
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("COD_FACTURA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("FECHA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("DUI_CLIENTE" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("PLACA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("COD_ASEGURADORA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("TOTAL_FINAL" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("DUI_EMPLEADO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("ESTADO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("USUARIO_MOD" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" MODIFY ("FECHA_MOD" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."FACTURA" ADD CONSTRAINT "FACTURA_PK" PRIMARY KEY ("COD_FACTURA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MODELO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."MODELO" MODIFY ("COD_MODELO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."MODELO" MODIFY ("COD_MARCA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."MODELO" MODIFY ("NOMBRE_MODELO" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."MODELO" MODIFY ("USUARIO_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."MODELO" MODIFY ("FECHA_CREA" NOT NULL ENABLE);
+  ALTER TABLE "JM10"."MODELO" ADD CONSTRAINT "MODELO_PK" PRIMARY KEY ("COD_MODELO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "TBS_TALLER"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table CLIENTE
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."CLIENTE" ADD CONSTRAINT "CLIENTE_FK1" FOREIGN KEY ("COD_ASEGURADORA")
+	  REFERENCES "JM10"."ASEGURADORA" ("COD_ASEGURADORA") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DETALLE_DIAGNOSTICO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" ADD CONSTRAINT "DETALLE_DIAGNOSTICO_FK1" FOREIGN KEY ("COD_DIAGNOSTICO")
+	  REFERENCES "JM10"."DIAGNOSTICO" ("COD_DIAGNOSTICO") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" ADD CONSTRAINT "DETALLE_DIAGNOSTICO_FK2" FOREIGN KEY ("COD_PROVEEDOR")
+	  REFERENCES "JM10"."REPUESTO_PROVEEDOR" ("REPUESTO_PROVEEDOR") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" ADD CONSTRAINT "DETALLE_DIAGNOSTICO_FK3" FOREIGN KEY ("COD_REPUESTO")
+	  REFERENCES "JM10"."REPUESTO_PROVEEDOR" ("REPUESTO_PROVEEDOR") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" ADD CONSTRAINT "DETALLE_DIAGNOSTICO_FK4" FOREIGN KEY ("COD_SERVICIO")
+	  REFERENCES "JM10"."SERVICIO" ("COD_SERVICIO") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."DETALLE_DIAGNOSTICO" ADD CONSTRAINT "DETALLE_DIAGNOSTICO_FK5" FOREIGN KEY ("DUI_EMPLEADO")
+	  REFERENCES "JM10"."EMPLEADO" ("DUI_EMPLEADO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DETALLE_FACTURA
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."DETALLE_FACTURA" ADD CONSTRAINT "DETALLE_FACTURA_FK1" FOREIGN KEY ("COD_SERVICIO")
+	  REFERENCES "JM10"."SERVICIO" ("COD_SERVICIO") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."DETALLE_FACTURA" ADD CONSTRAINT "DETALLE_FACTURA_FK2" FOREIGN KEY ("COD_PROVEEDOR")
+	  REFERENCES "JM10"."REPUESTO_PROVEEDOR" ("REPUESTO_PROVEEDOR") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."DETALLE_FACTURA" ADD CONSTRAINT "DETALLE_FACTURA_FK3" FOREIGN KEY ("COD_REPUESTO")
+	  REFERENCES "JM10"."REPUESTO_PROVEEDOR" ("REPUESTO_PROVEEDOR") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."DETALLE_FACTURA" ADD CONSTRAINT "DETALLE_FACTURA_FK4" FOREIGN KEY ("COD_DIAGNOSTICO")
+	  REFERENCES "JM10"."DIAGNOSTICO" ("COD_DIAGNOSTICO") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."DETALLE_FACTURA" ADD CONSTRAINT "DETALLE_FACTURA_FK5" FOREIGN KEY ("COD_FACTURA")
+	  REFERENCES "JM10"."FACTURA" ("COD_FACTURA") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table DIAGNOSTICO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."DIAGNOSTICO" ADD CONSTRAINT "DIAGNOSTICO_FK1" FOREIGN KEY ("DUI_CLIENTE")
+	  REFERENCES "JM10"."CLIENTE" ("DUI_CLIENTE") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."DIAGNOSTICO" ADD CONSTRAINT "DIAGNOSTICO_FK2" FOREIGN KEY ("PLACA")
+	  REFERENCES "JM10"."VEHICULO" ("PLACA") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EMPLEADO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."EMPLEADO" ADD CONSTRAINT "EMPLEADO_FK1" FOREIGN KEY ("COD_COMPETENCIA")
+	  REFERENCES "JM10"."COMPETENCIAS" ("COD_COMPETENCIA") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table FACTURA
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."FACTURA" ADD CONSTRAINT "FACTURA_FK1" FOREIGN KEY ("DUI_CLIENTE")
+	  REFERENCES "JM10"."CLIENTE" ("DUI_CLIENTE") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."FACTURA" ADD CONSTRAINT "FACTURA_FK2" FOREIGN KEY ("PLACA")
+	  REFERENCES "JM10"."VEHICULO" ("PLACA") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."FACTURA" ADD CONSTRAINT "FACTURA_FK3" FOREIGN KEY ("COD_ASEGURADORA")
+	  REFERENCES "JM10"."ASEGURADORA" ("COD_ASEGURADORA") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."FACTURA" ADD CONSTRAINT "FACTURA_FK4" FOREIGN KEY ("DUI_EMPLEADO")
+	  REFERENCES "JM10"."EMPLEADO" ("DUI_EMPLEADO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MODELO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."MODELO" ADD CONSTRAINT "MARCA_FK1" FOREIGN KEY ("COD_MARCA")
+	  REFERENCES "JM10"."MARCA" ("COD_MARCA") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table REPUESTO_PROVEEDOR
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."REPUESTO_PROVEEDOR" ADD CONSTRAINT "REPUESTO_PROVEEDOR_FK1" FOREIGN KEY ("COD_PROVEEDOR")
+	  REFERENCES "JM10"."PROVEEDOR" ("COD_PROVEEDOR") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."REPUESTO_PROVEEDOR" ADD CONSTRAINT "REPUESTO_PROVEEDOR_FK2" FOREIGN KEY ("COD_REPUESTO")
+	  REFERENCES "JM10"."REPUESTO" ("COD_REPUESTO") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table VEHICULO
+--------------------------------------------------------
+
+  ALTER TABLE "JM10"."VEHICULO" ADD CONSTRAINT "VEHICULO_FK1" FOREIGN KEY ("DUI_CLIENTE")
+	  REFERENCES "JM10"."CLIENTE" ("DUI_CLIENTE") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."VEHICULO" ADD CONSTRAINT "VEHICULO_FK2" FOREIGN KEY ("COD_MARCA")
+	  REFERENCES "JM10"."MARCA" ("COD_MARCA") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."VEHICULO" ADD CONSTRAINT "VEHICULO_FK3" FOREIGN KEY ("COD_MODELO")
+	  REFERENCES "JM10"."MODELO" ("COD_MODELO") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "JM10"."VEHICULO" ADD CONSTRAINT "VEHICULO_FK4" FOREIGN KEY ("COD_ASEGURADORA")
+	  REFERENCES "JM10"."ASEGURADORA" ("COD_ASEGURADORA") ON DELETE CASCADE ENABLE;
